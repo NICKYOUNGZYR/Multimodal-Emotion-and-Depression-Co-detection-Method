@@ -7,7 +7,7 @@ This repo provides a runnable skeleton for:
 - Target SFDA adaptation 
 - Evaluation
 
-## Quick start (synthetic data)
+## Quick start
 ```bash
 pip install -r requirements.txt
 

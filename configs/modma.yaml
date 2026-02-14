@@ -1,0 +1,21 @@
+dataset:
+  name: "MODMA"
+  root: "./data/MODMA"
+  split: "train_test"
+  num_classes: 2
+  use_synthetic_if_missing: true
+
+audio:
+  sample_rate: 16000
+  n_fft: 400
+  hop_length: 160
+  n_mels: 80
+  max_seconds: 10
+
+text:
+  max_length: 128
+
+train:
+  batch_size: 16
+  num_workers: 4
+  seed: 42

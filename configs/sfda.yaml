@@ -1,0 +1,17 @@
+sfda:
+  alpha_distill: 1.0
+  beta_mutual_info: 0.1
+  gamma_most_likely: 0.2
+  distill_temperature: 1.0
+
+freeze_thaw:
+  enabled: true
+  # stage0: freeze encoders, train proj + head
+  # stage1: unfreeze last blocks gradually
+  stage0_epochs: 2
+  stage1_unfreeze_every: 1
+
+most_likely:
+  sharpen_temperature: 0.5
+  margin: 0.2
+  use_entropy_minimization_as_task: true

@@ -1,0 +1,35 @@
+# Model architecture shared config
+project: "ceat_sfda_eeg"
+
+modalities:
+  use_eeg: true
+  use_audio: true
+  use_text: true
+
+dims:
+  eeg_in: 128          # placeholder
+  audio_in: 80         # mel bins spec bins
+  text_in: 768         # bert-base hidden size
+  shared: 256          # projection dimension for contrastive space
+  fused: 2560          # placeholder; concat of projected + enc features
+
+contrastive:
+  temperature: 0.07
+
+encoders:
+  eeg:
+    cnn_channels: [32, 64, 128]
+    lstm_hidden: 128
+    lstm_layers: 1
+    dropout: 0.2
+  audio:
+    lstm_hidden: 128
+    lstm_layers: 1
+    dropout: 0.2
+    frame_mask_ratio: 0.3
+  text:
+    backbone: "bert-base-uncased"
+    freeze: true
+
+fusion:
+  type: "concat"
